@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Love Notes for My Baby</title>
+<!-- Google Fonts for a bold, modern look -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Pacifico&display=swap" rel="stylesheet" />
+<style>
+  /* Body with a bold, textured background and vibrant colors */
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: repeating-linear-gradient(
+      45deg,
+      #ffe6f0,
+      #ffe6f0 10px,
+      #ffe0f0 10px,
+      #ffe0f0 20px
+    );
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 30px;
+    color: #4a2c45;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Decorative geometric shapes in background (optional, can remove if you want hearts to be main decoration) */
+  /* Removed for focus on hearts */
+
+  /* Heading with stylish font and glow effect */
+  h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 3em;
+    color: #d6336c;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(214, 51, 108, 0.4);
+    z-index: 1;
+  }
+
+  /* Love note container with bold background and 3D effect */
+  #note {
+    font-family: 'Pacifico', cursive;
+    font-size: 1.5em;
+    max-width: 80%;
+    padding: 40px;
+    margin: 20px 0;
+    background: linear-gradient(135deg, #f76c6c, #f79292);
+    color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    text-align: center;
+    transition: all 0.5s ease;
+    position: relative;
+    opacity: 0;
+    transform: scale(0.95);
+    animation: fadeInUp 1s forwards;
+  }
+
+  /* Animate the note for emphasis */
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Button with dynamic style and hover effects */
+  button {
+    background: linear-gradient(135deg, #d6336c, #a52a4a);
+    color: #fff;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.2em;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    margin-top: 20px;
+  }
+
+  button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  }
+
+  /* Hearts styles */
+  .heart {
+    position: absolute;
+    font-size: 24px;
+    color: #d6336c;
+    opacity: 0.8;
+    animation: floatHearts 10s linear infinite;
+    pointer-events: none;
+  }
+
+  /* Animate hearts floating upward */
+  @keyframes floatHearts {
+    0% {
+      transform: translateY(0) scale(1);
+      opacity: 0.8;
+    }
+    50% {
+      opacity: 0.4;
+    }
+    100% {
+      transform: translateY(-100vh) scale(0.5);
+      opacity: 0;
+    }
+  }
+</style>
+</head>
+<body>
+
+<h1>♥ Love Notes for My Baby Rose ♥</h1>
+
+<div id="note">Click the button to see a love note!</div>
+<button onclick="showRandomNote()">Show Love Note</button>
+
+<!-- Container for floating hearts -->
+<div id="hearts-container"></div>
+
+<script>
+  const notes = [
+    "You are my sunshine on cloudy days my baby.",
+    "my baby Every moment with you is a treasure.",
+    "Your smile lights up my world mahal ko .",
+    "I love you more with each passing day asawa ko.",
+    "You are my forever and always aking mahal.",
+    "My heart beats for you bby ko.",
+    "You make my life complete mahal ko.",
+    "Being with you feels like home asawa ko.",
+    "You are the sweetest part of my life my bby .",
+    "Forever yours, with all my heart aking asawa."
+  ];
+
+  const noteDiv = document.getElementById('note');
+  const heartsContainer = document.getElementById('hearts-container');
+
+  function showRandomNote() {
+    // Create a new note with a fade-in effect
+    const newNote = document.createElement('div');
+    newNote.innerText = notes[Math.floor(Math.random() * notes.length)];
+    newNote.style.opacity = 0;
+    newNote.style.transform = 'translateY(20px)';
+    newNote.style.transition = 'opacity 0.5s, transform 0.5s';
+
+    // Clear existing note
+    noteDiv.innerHTML = '';
+    noteDiv.appendChild(newNote);
+
+    // Animate fade in
+    setTimeout(() => {
+      newNote.style.opacity = 1;
+      newNote.style.transform = 'translateY(0)';
+    }, 50);
+  }
+
+  // Generate floating hearts randomly across the screen
+  function createHeart() {
+    const heart = document.createElement('div');
+    heart.className = 'heart';
+    heart.innerHTML = '❤️'; // You can change to other Unicode hearts or emojis
+    // Random position
+    heart.style.left = Math.random() * 90 + 'vw';
+    // Random size
+    const size = Math.random() * 12 + 12; // between 12px and 24px
+    heart.style.fontSize = size + 'px';
+
+    // Random delay for animation start
+    heart.style.animationDelay = Math.random() * 5 + 's';
+
+    heartsContainer.appendChild(heart);
+
+    // Remove hearts after animation completes to keep DOM clean
+    setTimeout(() => {
+      if (heartsContainer.contains(heart)) {
+        heartsContainer.removeChild(heart);
+      }
+    }, 10000); // match with animation duration
+  }
+
+  // Continuously generate hearts
+  setInterval(createHeart, 300); // every 0.3 seconds
+
+  // Initialize with a love note
+  window.onload = () => {
+    showRandomNote();
+    createHeart(); // create initial hearts
+  };
+</script>
+
+</body>
+</html>
