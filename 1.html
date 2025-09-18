@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Love Notes for Her</title>
+<style>
+  body {
+    font-family: 'Arial', sans-serif;
+    background: #ffe6f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+  }
+  h1 {
+    color: #d6336c;
+  }
+  #note {
+    font-size: 1.5em;
+    margin: 30px 20px;
+    padding: 20px;
+    background: #fff0f6;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+  button {
+    background-color: #d6336c;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1em;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  button:hover {
+    background-color: #a52a4a;
+  }
+</style>
+</head>
+<body>
+
+<h1>♥ Love Notes for You ♥</h1>
+<div id="note">Click the button to see a love note!</div>
+<button onclick="showRandomNote()">Show Love Note</button>
+
+<script>
+  const notes = [
+    "You are my sunshine on cloudy days.",
+    "Every moment with you is a treasure.",
+    "Your smile lights up my world.",
+    "I love you more with each passing day.",
+    "You are my forever and always.",
+    "My heart beats for you.",
+    "You make my life complete.",
+    "Being with you feels like home.",
+    "You are the sweetest part of my life.",
+    "Forever yours, with all my heart."
+  ];
+
+  function showRandomNote() {
+    const randomIndex = Math.floor(Math.random() * notes.length);
+    document.getElementById('note').textContent = notes[randomIndex];
+  }
+</script>
+
+</body>
+</html>
