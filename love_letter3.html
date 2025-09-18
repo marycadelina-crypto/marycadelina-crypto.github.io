@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>For My Love 💖</title>
+<!-- Link to a vintage font from Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Sacramento&display=swap" rel="stylesheet">
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Vintage textured background */
+    background: #f4e2d8 url('https://www.transparenttextures.com/patterns/paper-fibers.png') repeat;
+    font-family: 'Georgia', serif;
+    overflow: hidden;
+    position: relative;
+    color: #5b4636;
+  }
+
+  /* Overlay for warm sepia tone */
+  body::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(245, 222, 179, 0.2); /* light sepia overlay */
+    pointer-events: none;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 20px;
+    max-width: 600px;
+  }
+
+  h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5em;
+    color: #8b5e3c;
+    margin-bottom: 20px;
+  }
+
+  button {
+    background-color: #c68642; /* warm vintage tone */
+    border: none;
+    padding: 12px 24px;
+    border-radius: 30px;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+
+  button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+  }
+
+  .letter {
+    margin-top: 30px;
+    font-size: 1.2em;
+    line-height: 1.6;
+    background: #fffaf0; /* vintage paper color */
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    display: none;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    white-space: pre-line;
+    font-family: 'Sacramento', cursive;
+    color: #5b4636;
+  }
+
+  .heart {
+    position: absolute;
+    font-size: 20px;
+    color: #c68642;
+    animation: floatUp 4s linear forwards;
+  }
+
+  @keyframes floatUp {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-300px) scale(1.5); opacity: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Happy 1st Monthsary, Rose 🌹💖</h1>
+  <button onclick="showLetter()">Read Me</button>
+  <div id="letter" class="letter"></div>
+</div>
+
+<!-- 🎵 Embedded Vintage Music -->
+<audio autoplay loop>
+  <!-- Replace with your actual vintage music base64 or URL -->
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
+  Your browser does not support the audio element.
+</audio>
+
+<script>
+const yourLoveLetter = `
+My dearest bby Rose,
+
+Happy first monthsary, my love my baby ko. One month may seem short in the eyes of others, but to me, it already feels like a lifetime of moments with you—moments that changed me, softened me, and made me believe in love more deeply than ever before.  
+
+Even in our little fights and tampuhan, I find myself grateful, because it reminds me how much I care for you, how afraid I am of losing you. Every tear, every laugh, every whispered “I love you” has tied my heart closer to yours.  
+
+The distance between us is hard, but it also makes me realize how precious you are. Every call, every message, every second I hear your voice feels like a gift I don’t deserve, yet you choose to give it to me anyway. And for that, I thank you, bby ko. Thank you for being patient with me, for holding on to us even when it gets difficult.  
+
+Bby ko, you are not just my love—you are my safe place, my comfort, and my joy. When you smile, I feel alive. When you’re sad, my heart aches to reach you. And when you tell me you love me, it feels like the whole world finally makes sense.  
+
+I may not be there to hold you tonight, but I promise you this—I am yours completely. Through the miles, through the storms, through every little misunderstanding, I will always find my way back to you. Because my love begins and ends with you.  
+
+So here’s to us, bby ko—to our first month, and to every month and year to come. I dream of the day I can finally hold your hand without letting go. Until then, let this letter be a piece of my heart, sealed only for you.  
+
+I love you sooo much my bby.. always... 😘😘😘❤️❤️❤️❤️  
+
+Forever yours,  
+Your bby MJ ❤️
+`;
+
+function showLetter() {
+  const letterDiv = document.getElementById("letter");
+  letterDiv.style.display = "block";
+  let i = 0;
+  function typeWriter() {
+    if (i < yourLoveLetter.length) {
+      letterDiv.innerHTML += yourLoveLetter.charAt(i);
+      i++;
+      setTimeout(typeWriter, 40);
+    }
+  }
+  typeWriter();
+  createHearts();
+}
+
+function createHearts() {
+  setInterval(() => {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤";
+    heart.style.left = Math.random() * window.innerWidth + "px";
+    heart.style.bottom = "0px";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 4000);
+  }, 600);
+}
+</script>
+</body>
+</html>
