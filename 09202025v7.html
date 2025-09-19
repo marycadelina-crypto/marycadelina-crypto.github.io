@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>My Sweet Love Letter</title>
+<!-- Handwritten and romantic fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script&display=swap" rel="stylesheet" />
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000; /* Black background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'Dancing Script', cursive;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative stars, hearts, flowers, emojis */
+.star {
+  position: absolute;
+  font-size: 1.5em;
+  color: #ffd700; /* Gold stars */
+  animation: twinkle 2s infinite alternate;
+}
+@keyframes twinkle {
+  from { opacity: 0.8; }
+  to { opacity: 0.2; }
+}
+
+/* Generate multiple stars with random positions */
+.star:nth-child(1) { top: 10%; left: 5%; }
+.star:nth-child(2) { top: 20%; right: 10%; font-size: 2em; animation-delay: 0.5s; }
+.star:nth-child(3) { top: 30%; left: 15%; font-size: 1.8em; animation-delay: 1s; }
+.star:nth-child(4) { top: 15%; right: 20%; font-size: 1.3em; }
+.star:nth-child(5) { top: 80%; left: 25%; font-size: 2em; }
+.star:nth-child(6) { top: 60%; right: 15%; font-size: 1.7em; }
+
+.decor {
+  position: absolute;
+  font-size: 2em;
+  opacity: 0.8;
+}
+/* Flowers and hearts around the scene */
+.flower1 { top: 10%; left: 5%; }
+.flower2 { bottom: 10%; right: 8%; }
+.heart1 { top: 50%; left: 10%; font-size: 2.5em; color: red; }
+.kiss { bottom: 15%; right: 12%; font-size: 2em; color: pink; }
+
+.paper {
+  position: relative;
+  max-width: 700px;
+  padding: 40px;
+  background-color: rgba(0,0,0,0.6); /* semi-transparent black to make text pop */
+  border-radius: 15px;
+  border: 2px solid #fff;
+  box-shadow: 0 0 20px rgba(255,255,255,0.3);
+  text-align: center;
+  z-index: 1;
+}
+h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3em;
+  margin-bottom: 20px;
+  color: #ff69b4; /* pinkish for romantic vibe */
+  text-shadow: 1px 1px 2px #000;
+}
+.message {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.4em;
+  line-height: 1.8;
+}
+</style>
+</head>
+<body>
+
+<!-- Decorative stars -->
+<div class="star">⭐</div>
+<div class="star">✨</div>
+<div class="star">🌟</div>
+<div class="star">⭐</div>
+<div class="star">✨</div>
+<div class="star">🌟</div>
+
+<!-- Decorative flowers and hearts -->
+<div class="decor flower1">🌸</div>
+<div class="decor flower2">🌺</div>
+<div class="decor heart1">❤️</div>
+<div class="decor kiss">💋</div>
+
+<div class="paper">
+  <h1>My Sweet Baby💖</h1>
+  <div class="message">
+    <p>
+      To my dearest baby, 💘<br><br>
+      Every moment with you feels like a beautiful dream I never want to wake up from. Your presence lights up my world and fills my heart with joy and warmth. Thank you for being you — so genuine, kind, and irreplaceable.<br><br>
+      No matter where life takes us, remember that you are deeply loved and appreciated. I cherish every second we share and look forward to many more beautiful memories together, i love you asawa ko mwaaah. ❤️<br><br>
+      Forever yours, <br>
+      MJ 💖✨
+    </p>
+  </div>
+</div>
+
+</body>
+</html>
