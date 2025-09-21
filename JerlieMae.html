@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Jerlie Mae</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Trebuchet MS", sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+      color: #fff;
+      background: linear-gradient(135deg, #ff6a00, #ee0979);
+      background-size: 400% 400%;
+      animation: gradientBG 12s ease infinite;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .card {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+      max-width: 500px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 0.3em;
+    }
+
+    p {
+      font-size: 1.2em;
+      line-height: 1.6;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 20px;
+      font-size: 1em;
+      border: none;
+      border-radius: 10px;
+      background: #ffcc70;
+      color: #333;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.3s ease;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      background: #ffd88d;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>🎉 Happy Birthday, Jerlie Mae! 🎂</h1>
+    <p>
+      It’s been a long time since we last saw each other,<br>
+      but I want you to know I’m grateful<br>
+      for the moments we shared.<br><br>
+      You made me laugh, you listened, and<br>
+      you left me with memories I’ll always cherish. 💖
+    </p>
+    <button onclick="reveal()">Click for a Birthday Wish 🎁</button>
+    <p id="surprise" style="display:none; margin-top:20px; font-size:1.3em;">May your day be filled with joy, laughter, and love — just like the happiness you’ve shared with me. 🌸✨</p>
+  </div>
+
+  <script>
+    function reveal() {
+      document.getElementById("surprise").style.display = "block";
+    }
+  </script>
+</body>
+</html>
