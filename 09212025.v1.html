@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For My Rose 🌹</title>
+  <style>
+    body {
+      font-family: "Georgia", serif;
+      background: linear-gradient(135deg, #3a1c71, #d76d77, #ffaf7b);
+      background-size: 300% 300%;
+      animation: gradientShift 20s ease infinite;
+      color: #f5f5f5;
+      text-align: center;
+      padding: 50px;
+      position: relative;
+      overflow: hidden;
+    }
+    h1 {
+      color: #ffcccc;
+      margin-bottom: 40px;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+    }
+    .scene {
+      display: none;
+    }
+    .active {
+      display: block;
+      animation: fade 1s;
+    }
+    .choices {
+      margin-top: 20px;
+      margin-bottom: 30px;
+    }
+    button {
+      background: #b3003a;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      margin: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s, transform 0.2s;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    }
+    button:hover {
+      background: #ff1a5e;
+      transform: scale(1.05);
+    }
+    .story-text {
+      margin-top: 20px;
+      font-size: 18px;
+      font-style: italic;
+      color: #fceaea;
+      max-width: 650px;
+      margin-left: auto;
+      margin-right: auto;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+    }
+    @keyframes fade {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    @keyframes gradientShift {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+    /* Floating glowing particles */
+    .particle {
+      position: fixed;
+      bottom: -20px;
+      color: rgba(255, 180, 180, 0.7);
+      font-size: 12px;
+      animation: floatUp 10s linear infinite;
+      text-shadow: 0 0 5px rgba(255,150,150,0.9);
+    }
+    @keyframes floatUp {
+      from {transform: translateY(0);}
+      to {transform: translateY(-120vh);}
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🌹 A Love Letter for Rose 🌹</h1>
+
+  <!-- Scene 1 -->
+  <div id="scene1" class="scene active">
+    <div class="choices">
+      <button onclick="goTo('scene2')">Start with a memory 🌸</button>
+      <button onclick="goTo('scene3')">Start with a promise 💍</button>
+    </div>
+    <p class="story-text">My dearest Rose, this is not just a letter… it’s a little journey.  
+    Where shall we begin?</p>
+  </div>
+
+  <!-- Scene 2 -->
+  <div id="scene2" class="scene">
+    <div class="choices">
+      <button onclick="goTo('scene4')">Tell me what you felt 💕</button>
+      <button onclick="goTo('scene5')">Tell me what you knew ✨</button>
+    </div>
+    <p class="story-text">I remember the first time I saw your smile… it felt like the world paused.</p>
+  </div>
+
+  <!-- Scene 3 -->
+  <div id="scene3" class="scene">
+    <div class="choices">
+      <button onclick="goTo('scene6')">Vow of the heart ❤️</button>
+      <button onclick="goTo('scene7')">Vow of the future 🌅</button>
+    </div>
+    <p class="story-text">I promise you this: no matter the storms, I’ll choose you, again and again.</p>
+  </div>
+
+  <!-- Scene 4 -->
+  <div id="scene4" class="scene">
+    <div class="choices">
+      <button onclick="goTo('ending')">💌 Continue</button>
+    </div>
+    <p class="story-text">What I felt was warmth, like home finally found in human form.  
+    And I knew from then on—you’d be my favorite story.</p>
+  </div>
+
+  <!-- Scene 5 -->
+  <div id="scene5" class="scene">
+    <div class="choices">
+      <button onclick="goTo('ending')">💌 Continue</button>
+    </div>
+    <p class="story-text">I knew right away… you were someone I’d never want to lose.  
+    A kind of knowing that settles deep, like destiny whispering your name.</p>
+  </div>
+
+  <!-- Scene 6 -->
+  <div id="scene6" class="scene">
+    <div class="choices">
+      <button onclick="goTo('ending')">💌 Continue</button>
+    </div>
+    <p class="story-text">My vow of the heart: to love you softly when you’re tired,  
+    to love you loudly when you forget your worth,  
+    to love you always—without condition.</p>
+  </div>
+
+  <!-- Scene 7 -->
+  <div id="scene7" class="scene">
+    <div class="choices">
+      <button onclick="goTo('ending')">💌 Continue</button>
+    </div>
+    <p class="story-text">My vow of the future: to walk beside you through ordinary days,  
+    to build a life where our laughter echoes,  
+    to write years with you like chapters in our forever book.</p>
+  </div>
+
+  <!-- Ending -->
+  <div id="ending" class="scene">
+    <div class="choices">
+      <button onclick="goTo('scene1')">🔄 Read Again</button>
+    </div>
+    <h2 style="color:#ffcccc;text-shadow:2px 2px 6px rgba(0,0,0,0.8);">🌹 My Rose…</h2>
+    <p class="story-text">At the end of every path, every choice, every story—  
+    it all leads back to one truth:  
+    <br><strong>You are my always. 💖</strong></p>
+  </div>
+
+  <script>
+    function goTo(sceneId) {
+      document.querySelectorAll('.scene').forEach(scene => {
+        scene.classList.remove('active');
+      });
+      document.getElementById(sceneId).classList.add('active');
+    }
+
+    // Floating particles
+    function createParticle() {
+      const particle = document.createElement("div");
+      particle.className = "particle";
+      particle.style.left = Math.random() * 100 + "vw";
+      particle.style.fontSize = (10 + Math.random() * 20) + "px";
+      particle.innerText = "✦";
+      document.body.appendChild(particle);
+
+      setTimeout(() => {
+        particle.remove();
+      }, 10000);
+    }
+    setInterval(createParticle, 700);
+  </script>
+
+</body>
+</html
