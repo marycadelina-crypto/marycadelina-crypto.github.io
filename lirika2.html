@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Surprise Messages for My ENFP GF</title>
+<style>
+  body {
+    background-color: #fff0f5;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  h1 {
+    color: #ff69b4;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .carousel {
+    background-color: #ffe6f0;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .message {
+    font-size: 1.3em;
+    padding: 20px;
+  }
+
+  .buttons {
+    margin-top: 20px;
+  }
+
+  button {
+    background-color: #ff69b4;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+  }
+
+  button:hover {
+    background-color: #ff85c1;
+  }
+</style>
+</head>
+<body>
+
+<h1>Messages for My Bby💖</h1>
+
+<div class="carousel" id="messageCarousel">
+  <div class="message" id="currentMessage">Loading...</div>
+</div>
+
+<div class="buttons">
+  <button onclick="showPrevious()">Previous</button>
+  <button onclick="showNext()">Next</button>
+</div>
+
+<script>
+  const messages = [
+    "Even miles apart, I feel your energy and passion lighting up my world. Can't wait to meet you soon!",
+    "Your adventurous spirit inspires me every day. I believe our meeting will be worth the wait.",
+    "Every message from you makes my day brighter. I cherish every word and look forward to our future.",
+    "You're so vibrant and full of life—can't wait to share adventures and create memories together.",
+    "No matter the distance, my feelings for you grow stronger. Soon, we'll turn dreams into reality!",
+    "Thinking of your beautiful smile and contagious laughter keeps me going. You're my inspiration.",
+    "You're my free spirit, and I can't wait to explore the world with you someday.",
+    "Though we're apart now, I feel close to you in my heart. Our story is just beginning.",
+    "Counting down the days until I finally get to hold you and see your sparkling eyes in person.",
+    "You're the sunshine that brightens my days, even from afar. Our meeting will be magical!"
+  ];
+
+  let currentIndex = 0;
+
+  function showMessage(index) {
+    const messageDiv = document.getElementById('currentMessage');
+    messageDiv.textContent = messages[index];
+  }
+
+  function showPrevious() {
+    currentIndex = (currentIndex - 1 + messages.length) % messages.length;
+    showMessage(currentIndex);
+  }
+
+  function showNext() {
+    currentIndex = (currentIndex + 1) % messages.length;
+    showMessage(currentIndex);
+  }
+
+  // Initialize with the first message
+  showMessage(currentIndex);
+</script>
+
+</body>
+</html>
