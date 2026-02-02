@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Happy Birthday My Bby!</title>
+<!-- Import Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Montserrat&display=swap" rel="stylesheet" />
+
+<style>
+  /* Reset and base styles */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  }
+
+  h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 3.5em;
+    text-align: center;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 15px 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    animation: bounce 2s infinite;
+  }
+
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0); 
+    }
+    40% {
+      transform: translateY(-20px);
+    }
+    60% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .message {
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 25px 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    font-size: 1.3em;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 30px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .message:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+  }
+
+  /* Heart animation for added effect */
+  .hearts {
+    font-size: 2.5em;
+    margin-top: 20px;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+  }
+
+  /* Buttons styling */
+  .buttons {
+    margin-top: 40px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .btn {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    border: none;
+    padding: 14px 30px;
+    border-radius: 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+  }
+
+  .btn:hover {
+    background: linear-gradient(135deg, #feb47b, #ff7e5f);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  }
+
+  /* Responsive adjustments */
+  @media(max-width: 600px) {
+    h1 {
+      font-size: 2.5em;
+      padding: 10px 20px;
+    }
+    .message {
+      font-size: 1.1em;
+      padding: 20px 25px;
+    }
+    .btn {
+      font-size: 1em;
+      padding: 12px 24px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<h1>🎉 Happy Birthday My Bby! 🎉</h1>
+
+<div class="message">
+  <p>My dearest Bby, I know life's been tough lately, and you're facing so many challenges. I want you to remember that even across the distance, my love and admiration for you are stronger than ever.</p>
+  <p>You are incredibly brave, resilient, and beautiful — inside and out. I see your struggles, and I am here for you, cheering you on every step of the way. You are not alone. You are loved beyond measure, and I believe in you with all my heart.</p>
+  <p>On your special day, I just want you to feel how deeply you are loved, appreciated, and supported. You are my sunshine, my strength, and my everything. No matter how hard life gets, I’ll always be here, holding you close in spirit.</p>
+  <p>Happy birthday, my bby. Keep shining, keep fighting, and never forget how much you mean to me. I can't wait to hold you in my arms someday soon. Until then, this love is yours, forever and always. 💖</p>
+</div>
+
+<div class="hearts">💖💖💖</div>
+
+<div class="buttons">
+  <button class="btn" onclick="alert('Sending you a virtual hug! 🤗')">Send a Hug</button>
+  <button class="btn" onclick="alert('Counting down to our next reunion! ⏳')">Countdown</button>
+</div>
+
+</body>
+</html>
