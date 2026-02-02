@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Happy Birthday My Bby!</title>
+<!-- Import Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Montserrat&display=swap" rel="stylesheet" />
+
+<style>
+  /* Reset and base styles */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 3.5em;
+    text-align: center;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 15px 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    animation: bounce 2s infinite;
+  }
+
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0); 
+    }
+    40% {
+      transform: translateY(-20px);
+    }
+    60% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .message {
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 25px 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    font-size: 1.3em;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 30px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .message:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+  }
+
+  /* Floating hearts and kisses */
+  .float-hearts {
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    height: 0;
+    pointer-events: none;
+    overflow: visible;
+  }
+
+  .heart, .kiss {
+    position: absolute;
+    font-size: 2em;
+    opacity: 0.8;
+    animation: floatUp 5s linear forwards;
+  }
+
+  /* Generate multiple hearts with different positions and delays */
+  @keyframes floatUp {
+    0% {
+      transform: translateY(0);
+      opacity: 0.8;
+    }
+    100% {
+      transform: translateY(-300px);
+      opacity: 0;
+    }
+  }
+
+  /* Keyframes for multiple floating hearts */
+  @keyframes floatHeart {
+    0% { transform: translateY(0) translateX(0); opacity: 0.8; }
+    100% { transform: translateY(-300px) translateX(50px); opacity: 0; }
+  }
+
+  /* Hearts and kisses styles with different animation delays for variety */
+  .heart:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+  }
+  .heart:nth-child(2) {
+    left: 30%;
+    animation-delay: 1s;
+  }
+  .heart:nth-child(3) {
+    left: 50%;
+    animation-delay: 2s;
+  }
+  .heart:nth-child(4) {
+    left: 70%;
+    animation-delay: 3s;
+  }
+  .heart:nth-child(5) {
+    left: 90%;
+    animation-delay: 4s;
+  }
+
+  .kiss:nth-child(1) {
+    left: 20%;
+    font-size: 2.5em;
+    animation-delay: 0.5s;
+  }
+  .kiss:nth-child(2) {
+    left: 60%;
+    font-size: 2.5em;
+    animation-delay: 2.5s;
+  }
+
+  /* Buttons styling */
+  .buttons {
+    margin-top: 40px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .btn {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    border: none;
+    padding: 14px 30px;
+    border-radius: 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+  }
+
+  .btn:hover {
+    background: linear-gradient(135deg, #feb47b, #ff7e5f);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  }
+
+  /* Countdown styles */
+  .countdown {
+    margin-top: 30px;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  }
+
+  /* Responsive adjustments */
+  @media(max-width: 600px) {
+    h1 {
+      font-size: 2.5em;
+      padding: 10px 20px;
+    }
+    .message {
+      font-size: 1.1em;
+      padding: 20px 25px;
+    }
+    .btn {
+      font-size: 1em;
+      padding: 12px 24px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- Floating hearts and kisses container -->
+<div class="float-hearts" id="heartsContainer"></div>
+
+<h1>🎉 Happy Birthday My Bby! 🎉</h1>
+
+<div class="message">
+  <p>Hi, Bby… happy birthday, my love.</p>
+  <p>I know life hasn’t been easy for you. You work so hard every day, even when you’re tired… even when things feel heavy. And I just want you to know — I see that. I really do.</p>
+  <p>You’re stronger than you think, and braver than you give yourself credit for. Even when you’re just trying to get through the day, you’re still moving forward — and that already means so much.</p>
+  <p>On your birthday, I don’t just wish you happiness… I wish you rest. I wish you peace. I wish you a future that feels lighter than today.</p>
+  <p>And I want you to know this — you don’t have to carry everything alone forever. Slowly, step by step… with patience, with effort, with love — I believe we can build something better together. Not perfect… but real, stable, and shared.</p>
+  <p>Dreams don’t happen all at once. They happen little by little — with two people helping each other, choosing each other, and not giving up.</p>
+  <p>Thank you for being in my life. Thank you for trusting me with your heart. You matter to me… deeply.</p>
+  <p>Happy birthday, my Bby aking mahal. I’m here — today, and for the days ahead.</p>
+  <p>Mwaaah! ❤️</p>
+</div>
+
+<div class="countdown" id="countdown">Countdown to when we finally meet: <span id="timer"></span></div>
+
+<!-- Buttons -->
+<div class="buttons">
+  <button class="btn" onclick="alert('Sending you a virtual hug! 🤗')">Send a Hug</button>
+  <button class="btn" onclick="alert('Counting down to our next reunion! ⏳')">Countdown</button>
+</div>
+
+<script>
+  // Countdown date: set to your actual meet date
+  const meetDate = new Date("2024-12-25T00:00:00").getTime();
+
+  const timerSpan = document.getElementById('timer');
+
+  const countdownFunction = setInterval(() => {
+    const now = new Date().getTime();
+    const distance = meetDate - now;
+
+    if (distance < 0) {
+      clearInterval(countdownFunction);
+      document.getElementById('timer').innerHTML = "We are finally together! 🎉";
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById('timer').innerHTML = 
+      `${days}d ${hours}h ${minutes}m ${seconds}s`;
+  }, 1000);
+
+  // Generate floating hearts and kisses
+  const heartsContainer = document.getElementById('heartsContainer');
+
+  const createHeart = () => {
+    const heart = document.createElement('div');
+    heart.className = 'heart';
+    heart.innerHTML = '❤️';
+    heart.style.left = Math.random() * 90 + '%';
+    heart.style.top = '100%';
+    heart.style.fontSize = (Math.random() * 10 + 20) + 'px';
+    heart.style.opacity = Math.random() * 0.5 + 0.5;
+    heart.style.transform = `translateY(0) translateX(${Math.random() * 50 - 25}px)`;
+    heart.style.animationDuration = (3 + Math.random() * 2) + 's';
+
+    heartsContainer.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 5000);
+  };
+
+  const createKiss = () => {
+    const kiss = document.createElement('div');
+    kiss.className = 'kiss';
+    kiss.innerHTML = '💋';
+    kiss.style.left = Math.random() * 80 + '%';
+    kiss.style.top = '100%';
+    kiss.style.fontSize = '2.5em';
+    kiss.style.opacity = Math.random() * 0.6 + 0.4;
+    kiss.style.transform = `translateY(0) translateX(${Math.random() * 50 - 25}px)`;
+    kiss.style.animationDuration = (4 + Math.random() * 2) + 's';
+
+    heartsContainer.appendChild(kiss);
+
+    setTimeout(() => {
+      kiss.remove();
+    }, 5000);
+  };
+
+  // Generate hearts and kisses periodically
+  setInterval(() => {
+    createHeart();
+  }, 300);
+  setInterval(() => {
+    createKiss();
+  }, 700);
+</script>
+
+</body>
+</html>
